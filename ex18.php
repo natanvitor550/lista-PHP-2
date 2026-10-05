@@ -95,21 +95,15 @@ $agendaCli = [
 $relatorio = organizarAgenda($agendaCli, 'Jorge');
 
 
-// Mostrar quantidade de consultas
-
 echo "Quantidade de consultas: " . $relatorio['totalConsultas'] . "<br>";
-
-
 echo "Pacientes diferentes: ". $relatorio['pacientesDiferentes'] . "<br>";
 
 $primeiro = $relatorio['primeiroAtendimento'];
 
 echo "Primeiro atendimento: " . $primeiro['paciente'] . $primeiro['data'] . $primeiro['horario'] . "<br>";
 
-
 if($relatorio['horariosDuplicados']) {
     echo "Existem horários duplicados.<br>";
-
 } else {
     echo "Não existem horários duplicados.<br>";
 }
@@ -118,12 +112,9 @@ foreach($relatorio['resultadoPesquisa'] as $consulta) {
     echo $consulta['paciente'] . $consulta['data'] . $consulta['horario'] . "<br>";
 }
 
-
-
 echo "<br>Agenda ordenada:<br>";
 foreach($relatorio['agendaOrdenada'] as $consulta) {
     echo $consulta['paciente'] . $consulta['especialidade'] . $consulta['data'] . $consulta['horario'] . "<br>" ;
-
 }
 
 ?>
